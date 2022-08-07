@@ -1,0 +1,24 @@
+
+server.port: 8081
+
+
+#show-sql mostra o log do sql/jpa no server
+#ddl-auto compara as diferencas e atualiza
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/academia?useTimezone=true&serverTimezone=UTC&useLegacyDate
+    username: cami
+    password: root
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.format_sql: true
+
+#se torna mais verboso
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace
